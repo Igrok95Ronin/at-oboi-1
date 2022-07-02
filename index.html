@@ -147,6 +147,40 @@ $title = $text . ' ' . $city;
                 </div>
             </div>
         </section>
+        <section class="slider">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 container">
+                        <div class="slider__box">
+                            <div class="slider__items">
+                                <img class="slider__item" src="assets/img/01.jpg" alt="" >
+                            </div>
+                            <div class="slider__items">
+                                <img class="slider__item" src="assets/img/02.jpg" alt="" >
+                            </div>
+                            <div class="slider__items">
+                                <img class="slider__item" src="assets/img/03.jpg" alt="" >
+                            </div>
+                            <div class="slider__items">
+                                <img class="slider__item" src="assets/img/04.jpg" alt="" >
+                            </div>
+                            <div class="slider__items">
+                                <img class="slider__item" src="assets/img/05.jpg" alt="" >
+                            </div>
+                            <div class="slider__items">
+                                <img class="slider__item" src="assets/img/06.jpg" alt="" >
+                            </div>
+                            <div class="slider__items">
+                                <img class="slider__item" src="assets/img/07.jpg" alt="" >
+                            </div>
+                            <div class="slider__items">
+                                <img class="slider__item" src="assets/img/08.jpg" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!--Нижний колонтитул страницы-->
     <footer class="footer">
@@ -166,8 +200,26 @@ $title = $text . ' ' . $city;
     </footer>
     <!--Style-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
     <link href="assets/css/style.css" rel="stylesheet">
-    <script src="assets/css/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            const slider = $('.slider__box');
+            slider.slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            });
+
+
+        });
+      </script>
 </body>
 
 </html>
