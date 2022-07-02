@@ -1,6 +1,15 @@
 *{
     box-sizing: border-box;
 }
+body{
+    outline: 1px solid red;
+    margin: auto;
+    padding: 0;
+    font: 15px Helvetica,Arial,sans-serif;
+    max-width: 1920px;
+    min-width: 320px;
+    color: #7a7a7a;
+}
 a{
     text-decoration: none;
     display: inline-block;
@@ -12,17 +21,126 @@ li{
     padding: 0;
 }
 .container {
-    max-width: 1170px;
+    max-width: 1550px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 12px;
 }
 
-body{
-    outline: 1px solid red;
-    margin: auto;
-    padding: 0;
-    font: 15px Helvetica,Arial,sans-serif;
-    max-width: 1920px;
-    min-width: 320px;
-    color: #7a7a7a;
+$primaryColor: #7D0505;
+
+//Header
+.header {
+    background-image: url(../img/headerFon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+.header__box {
+}
+.header__top {
+    background: rgba(255,255,255,0.8);
+    min-height: 90px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+.header__top-container{
+    max-width: 1550px;
+    margin: 0 auto;
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__log {
+
+}
+.header-button {
+    color:#fff;
+    background-color: $primaryColor;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 10px 10px 10px 40px;
+    border-radius: 5px;
+    position: relative;
+    transition: .3s;
+    &:hover {
+        color: #fff;
+        background-color: #a00606;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(../img/telephone-fill.svg);
+        width: 16px;
+        height: 16px;
+        left: 13px;
+        top: 12px;
+    }
+}
+.header__bottom {
+    min-height: 809px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 200px 0px 30px;
+}
+.header__inner {
+    background: rgba(0,0,0,0.5);
+    padding: 80px 66px;
+    min-width: 493px;
+    max-width: 600px;
+    min-height: 220px;
+    text-align: center;
+}
+.header__title {
+    color: #fff;
+    font-size: 44px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.header__inner2 {
+    background-color: $primaryColor;
+    padding: 23px 50px;
+    max-width: 460px;
+    width: 100%;
+    min-height: 112px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-70%);
+}
+.header__contacts {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+.header__button-contacts {
+    font-size: 19px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding-left: 40px;
+    
+    &:hover {
+        color: #fff;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 33px;
+        height: 33px;
+        background: #9D0403;
+        border-radius: 50%;
+        left: 48px;
+        top: 55px;
+        background-image: url(../img/telephone-fill.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: .5s;
+    }
+    &:hover::before {
+        background-color: #c30808;
+    }
+}
+
