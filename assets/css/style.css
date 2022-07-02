@@ -257,3 +257,28 @@ li {
   color: #1C1C1C;
   font-weight: 600;
 }
+
+.master {
+  background-color: #7D0505;
+}
+
+.master__box {
+  border-left: 1px solid #fff;
+  padding: 50px 0 50px 48px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.master__title {
+  font-size: 41px;
+  color: #fff;
+  font-weight: 500;
+  margin: 0 0 30px;
+}
+
+.master__text {
+  font-size: 19px;
+  color: #fff;
+  font-weight: 300;
+  line-height: 30px;
+}
