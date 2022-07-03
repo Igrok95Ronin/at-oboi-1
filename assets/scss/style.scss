@@ -289,3 +289,29 @@ $linkImg2: "../img/telephone-fill2.svg";
         }
     };
 }
+//technology
+.technology {
+    background-color: #C3C3C3;
+}
+.technology__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.technology__title {
+    font-size: 41px;
+    font-weight: 600;
+    color: #1C1C1C;
+    margin-top: 60px;
+    margin-bottom: 46px;
+    line-height: 60px;
+}
+.technology__text {
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+    line-height: 34px;
+}
+.technology__img {
+    width: 100%;
+}
