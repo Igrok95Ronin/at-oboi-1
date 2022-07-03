@@ -397,3 +397,40 @@ li {
 .technology__img {
   width: 100%;
 }
+
+.malerarbeiten__box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.malerarbeiten__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.malerarbeiten__img {
+  border: 6px solid #fff;
+  box-shadow: 0 0 28px -3pxrgba 0, 0, 0, 0.5;
+  -webkit-box-shadow: 0 0 28px -3px rgba(0, 0, 0, 0.5);
+  width: 48%;
+}
+
+.malerarbeiten__title {
+  font-size: 41px;
+  font-weight: 600;
+  color: #1C1C1C;
+  margin-bottom: 35px;
+  line-height: 50px;
+}
+
+.malerarbeiten__text {
+  font-size: 16px;
+  color: #444;
+  font-weight: 500;
+  line-height: 34px;
+}
