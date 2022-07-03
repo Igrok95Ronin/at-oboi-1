@@ -27,12 +27,45 @@ li{
 }
 
 $primaryColor: #7D0505;
+$linkImg: "../img/telephone-fill.svg";
+$linkImg2: "../img/telephone-fill2.svg";
 
+@mixin btn($top, $left, $bgc:#9D0403, $img:$linkImg) {
+    font-size: 19px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding-left: 40px;
+    @content;
+    &:hover {
+        color: #fff;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 33px;
+        height: 33px;
+        background: $bgc;
+        border-radius: 50%;
+        top: $top;
+        left: $left;
+        background-image: url($img);
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: .5s;
+        @content;
+    }
+    &:hover::before {
+        background-color: #c30808;
+        @content;
+    }
+}
 //Header
 .header {
     background-image: url(../img/headerFon.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 .header__box {
 }
@@ -51,9 +84,7 @@ $primaryColor: #7D0505;
     justify-content: space-between;
     align-items: center;
 }
-.header__log {
 
-}
 .header-button {
     color:#fff;
     background-color: $primaryColor;
@@ -108,7 +139,7 @@ $primaryColor: #7D0505;
     position: absolute;
     right: 0;
     bottom: 0;
-    transform: translateY(-70%);
+    transform: translateY(50%);
 }
 .header__contacts {
     font-size: 20px;
@@ -116,32 +147,7 @@ $primaryColor: #7D0505;
     color: #fff;
 }
 .header__button-contacts {
-    font-size: 19px;
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: 3px;
-    padding-left: 40px;
-    
-    &:hover {
-        color: #fff;
-    }
-    &::before {
-        content: '';
-        position: absolute;
-        width: 33px;
-        height: 33px;
-        background: #9D0403;
-        border-radius: 50%;
-        left: 48px;
-        top: 55px;
-        background-image: url(../img/telephone-fill.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        transition: .5s;
-    }
-    &:hover::before {
-        background-color: #c30808;
-    }
+    @include btn(55px, 48px);
 }
 //Painter
 .painter {
@@ -247,4 +253,39 @@ $primaryColor: #7D0505;
 .slider__item {
     border-radius: 25px;
     width: 100%;
+}
+//Contacts
+
+.contacts__box {
+    background-color: $primaryColor;
+    text-align: center;
+    padding: 50px 5px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(../img/telephone-fill3.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        left: 0;
+        top: 0;
+        width: 183px;
+        height: 183px;
+    }
+}
+.contacts__title {
+    font-size: 34px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 15px;
+    line-height: 47px;
+}
+.contacts__btn {
+    position: relative;
+    @include btn(-7px, -10px, #fff, $linkImg2){
+        font-size: 20px;
+        &:hover::before {
+            background-color: gold !important;
+        }
+    };
 }
