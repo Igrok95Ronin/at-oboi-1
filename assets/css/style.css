@@ -310,9 +310,12 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
   left: 0;
-  top: 0;
+  top: 50%;
   width: 183px;
   height: 183px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .contacts__title {
@@ -433,4 +436,51 @@ li {
   color: #444;
   font-weight: 500;
   line-height: 34px;
+}
+
+.benefits {
+  background-image: url(../img/paralux.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.benefits__title {
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  font-size: 41px;
+  margin-bottom: 55px;
+}
+
+.benefits__box {
+  padding: 90px 0px 50px;
+}
+
+.benefits__ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  width: 77%;
+  margin: 0 auto;
+}
+
+.benefits__li {
+  color: #fff;
+  list-style: none;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  padding-left: 52px;
+  position: relative;
+}
+.benefits__li::before {
+  content: "";
+  position: absolute;
+  background-image: url(../img/icon2.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  left: 0;
 }
