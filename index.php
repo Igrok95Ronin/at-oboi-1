@@ -4,8 +4,8 @@ $site_data      = json_decode(file_get_contents('http://templates.jquery.link/ap
 $phone_name     = $site_data['phone_name'];
 $phone_href     = $site_data['phone_href'];
 
-$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Entrumpelung'));
-$city           = str_replace('+', ' ', trim($_GET['n'] ?? 'in der nahe'));
+$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Maler Markus'));
+$city           = str_replace('+', ' ', trim($_GET['n'] ?? ''));
 
 $title = $text . ' ' . $city;
 ?>
@@ -31,16 +31,16 @@ $title = $text . ' ' . $city;
                         <div class="header__top">
                             <div class="header__top-container">
                                 <img class="header__log" src="assets/img/logo.jpg" alt="">
-                                <a class="header-button" href="#">111222333</a>
+                                <a class="header-button" href="<?= $phone_href ?>"><?= $phone_name ?></a>
                             </div>
                         </div>
                         <div class="header__bottom">
                             <div class="header__inner">
-                                <h1 class="header__title"> Maler Markus</h1>
+                                <h1 class="header__title"> <?= $title ?></h1>
                             </div>
                             <div class="header__inner2">
                                 <p class="header__contacts">Jetzt Termin vereinbaren:</p>
-                                <a class="header__button-contacts" href="#">111222333</a>
+                                <a class="header__button-contacts" href="<?= $phone_href ?>"><?= $phone_name ?></a>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@ $title = $text . ' ' . $city;
                 </div>
             </div>
         </section>
-        <section class="slider">
+        <div class="slider">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 container">
@@ -180,20 +180,20 @@ $title = $text . ' ' . $city;
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
         <section class="contacts my-5">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 container">
                         <div class="contacts__box">
                             <h2 class="contacts__title">Vereinbaren Sie heute noch einen Termin!</h2>
-                            <a class="contacts__btn" href="">111222333</a>
+                            <a class="contacts__btn" href="<?= $phone_href ?>"><?= $phone_name ?></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="technology">
+         <section class="technology">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 container">
@@ -269,7 +269,7 @@ $title = $text . ' ' . $city;
                     <div class="col-12 container">
                         <div class="contacts__box">
                             <h2 class="contacts__title">Profitieren Sie von unserer Fachkompetenz und lassen<br> Sie sich einmal kostenlos beraten.</h2>
-                            <a class="contacts__btn" href="">111222333</a>
+                            <a class="contacts__btn" href="<?= $phone_href ?>"><?= $phone_name ?></a>
                         </div>
                     </div>
                 </div>
@@ -294,46 +294,54 @@ $title = $text . ' ' . $city;
                 </div>
             </div>
         </section>
-
+        <section class="forms">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 container">
+                        <div class="forms__box">
+                            <form id="jq_form" class="mt-5">
+                                <h5 class="text-center forms__title"><span>K</span>ontaktieren Sie uns:</h5>
+                                <div class="my-3">
+                                    <input class="form-control" placeholder="Vorname" name="jq_name" type="text">
+                                    <div id="jq_name" style="font-weight:700;font-size:15px;color:red;padding-top:2px;display:none">Dies ist ein Pflichtfeld.</div>
+                                </div>
+                                <div class="my-4">
+                                    <input class="form-control" placeholder="Telefon" name="jq_phone" type="text">
+                                    <div id="jq_phone" style="font-weight:700;font-size:15px;color:red;padding-top:2px;display:none">Dies ist ein Pflichtfeld.</div>
+                                </div>
+                                <div class="my-4">
+                                    <input class="form-control" placeholder="Straße" name="jq_street" type="text">
+                                </div>
+                                <div class="my-4">
+                                    <input class="form-control" placeholder="PLZ / Ort" name="jq_city" type="text">
+                                </div>
+                                <div class="my-4">
+                                    <input class="form-control" placeholder="E-Mail" name="jq_email" type="text"> 
+                                </div>
+                                <div class="my-4">
+                                    <textarea rows="3" class="form-control" name="jq_text" placeholder="Nachricht"></textarea>
+                                    <div id="jq_text" style="font-weight:700;font-size:15px;color:red;padding-top:2px;display:none">Dies ist ein Pflichtfeld.</div>
+                                </div>
+                                <div class="wer"><input class="btn  text-uppercase fw-bold mb-5 px-3 py-2 forms__button" type="submit" id="jq_submit" value="Senden"> </div>
+                                <div id="jq_success" style="display:none">Vielen Dank für deine Nachricht. Sie wurde gesendet.</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <!--Нижний колонтитул страницы-->
     <footer class="footer">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 container">footer</div>
+                <div class="col-12 container">2022</div>
             </div>
         </div>
-        <!-- Навигационные ссылки -->
-        <nav class="footer-nav">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 container">...</div>
-                </div>
-            </div>
-        </nav>
     </footer>
     <!--Style-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/slick-theme.css">
     <link href="assets/css/style.css" rel="stylesheet">
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            const slider = $('.slider__box');
-            slider.slick({
-                infinite: true,
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                dots: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-            });
-
-
-        });
-    </script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
